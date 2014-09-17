@@ -1,0 +1,31 @@
+<% provide(:title, "Edit Profile") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <legend class="centered">
+      <h1>Edit profile</h1>
+    </legend>
+     <div class="well">
+    <%= form_for(@user, :html => {:class => "form", :role => "form"}) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => "form-control input-lg"  %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, :class => "form-control input-lg"  %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => "form-control input-lg"  %>
+
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation, :class => "form-control input-lg"  %>
+
+      <%= f.submit "Update", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+  <% if current_user?(@user) %>
+    <%= link_to "Cancel Account", @user, method: :destroy,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</div>

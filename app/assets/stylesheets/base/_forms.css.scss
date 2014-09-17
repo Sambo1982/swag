@@ -1,0 +1,46 @@
+.form .form-control { margin-bottom: 10px; }
+@media (min-width:768px) {
+  #home{
+    margin-top:50px;
+  }
+}
+
+
+/* sign_up and login forms */
+legend.centered{
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  h1{
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-size: 50px;
+    color: #000;
+    font-weight: 100;
+  }
+  p.lead{
+  color: #737980;
+  font-size: 18px;
+  display: block;
+  -webkit-margin-after: .5em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  }
+}
+.custom-btn {
+  font-family: "Open Sans", sans-serif;
+  background-color: $charcoal;
+  text-decoration: none;
+
+  color: white;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.custom-btn:hover {
+  background-color: $orange;
+  color: white; 
+}
+

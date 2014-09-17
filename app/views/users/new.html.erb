@@ -1,0 +1,19 @@
+<% provide(:title, "Create an Account") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <legend class="centered">
+      <h1>Sign up</h1>
+    </legend>
+     <div class="well">
+
+      <%= form_for @user, :html => {:class => "form", :role => "form"} do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+        <%= f.text_field :name, :placeholder => "Name", :class => "form-control input-lg"  %>
+        <%= f.text_field :email, :placeholder => "Email", :class => "form-control input-lg"  %>
+        <%= f.password_field :password, :placeholder => "Password", :class => "form-control input-lg"  %>
+        <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => "form-control input-lg"  %>
+        <%= f.submit "Join", :class => "btn  btn-block custom-btn" %>   
+      <% end %>
+    </div>
+  </div>
+</div>

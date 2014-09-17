@@ -1,0 +1,64 @@
+@import "jquery.mmenu";
+@import "base/colors";
+@import "base/typography";
+
+#menu{
+ 
+};
+
+#menu:not( .mm-menu ) {
+   display: none;
+}
+
+#menu ul {
+  margin-top: 30px;
+}
+
+#nav-toggle-group{
+  position: absolute;
+  background-color: #333;
+  display: inline-block;
+  width: 60px;
+  height:50px;
+
+}
+#nav-toggle { 
+	cursor: pointer; 
+	padding: 10px 35px 16px 0px; 
+  
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 3px;
+  width: 25px;
+  background: $off-white;
+  position: absolute;
+  left: 16px;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -8px; 
+  left: 0px;
+}
+#nav-toggle span:after {
+  bottom: -8px;
+  left: 0px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
