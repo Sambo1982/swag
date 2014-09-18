@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:destroy]
 	before_action :signed_in_user,
-                only: [:index, :edit, :update, :cancel]
- 	before_action :correct_user,   only: [:edit, :update, :cancel]
+                only: [:index, :edit, :update, :destroy]
+ 	before_action :correct_user,   only: [:edit, :update, :destroy]
 
 	def new
 		@user = User.new
@@ -32,16 +32,30 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-	end
+    	User.find(params[:id]).destroy
+    	flash[:success] = "You have succesfully canceled your account."
+    	redirect_to root_path
+  	end
 
-
-	
+  	def restore
+  		@user = User.with_deleted.find(session[:tmp_user])
+  	end
+  	
+  	def restore_account
+  		@user = User.with_deleted.find(session[:tmp_user])
+  		session[:tmp_user] = nil 
+  		User.restore(@user.id)
+  		sign_in @user
+      redirect_to dashboard_path
+      flash[:success] = "Yay! You have just restored your account."
+  	end
 
 private
 	
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation, :status, :deleted_at)
 	end
+
 
 	def set_user
       @user = User.find(params[:id])

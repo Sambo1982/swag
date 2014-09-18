@@ -25,7 +25,7 @@
 
   </div>
   <% if current_user?(@user) %>
-    <%= link_to "Cancel Account", @user, method: :destroy,
+    <%= link_to "Cancel Account", @user, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
 </div>
