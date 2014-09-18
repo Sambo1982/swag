@@ -1,0 +1,14 @@
+<% provide(:title, "Restore Account") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <legend class="centered">
+      <h1>Welcome back <%= @user.name %>!</h1>
+      <p class="lead text-center">Looks like you canceled your account <%=  distance_of_time_in_words(@user.deleted_at, Time.now) %> ago.</p>
+    </legend>
+     <div class="well">
+     <h3></h3>
+     <p class="lead text-center">But not to worry, restoring your account is as easy as pushing a button...literally.</p>
+     <%= button_to "Restore Account!", { action: "restore_account" }, :class=> "btn btn-primary btn-lg btn-block" %>
+    </div>
+  </div>
+</div>

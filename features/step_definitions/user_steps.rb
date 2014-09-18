@@ -19,6 +19,18 @@ Given(/^Signup Success$/) do
   click_button "Join"
 end
 
+Given(/^I successful signin$/) do
+  visit signin_path
+  fill_in "Email", with: "samcarlsruh@gmail.com"
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
+end
+
+Given(/^I cancel my account$/) do
+  visit edit_user_path(User.last)
+  click_link "Cancel Account"
+end
+
 Given(/^I log out$/) do
   click_link "Sign out"
 end
