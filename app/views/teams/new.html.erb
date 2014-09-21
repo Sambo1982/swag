@@ -1,0 +1,28 @@
+<% provide(:title, "Create a Team") %>
+<% if @user.teams.count <= 0 %>
+	<script>
+		$(document).ready(function() {
+			$('#team-notice').modal('show')
+		});
+	</script>  
+	<%= render :partial => 'notice'%>
+<%end%>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <legend class="centered">
+      <h1>New Team</h1>
+    </legend>
+    <div class="well">
+
+  	<%= form_for @team, :html => {:class => "form", :role => "form"} do |f| %>
+      	<%= render 'shared/error_messages', object: f.object %>
+	    <%= f.text_field :name, :placeholder => "Name", :class => "form-control input-lg"  %>
+	    <%= f.text_field :description, :placeholder => "Description", :class => "form-control input-lg"  %>
+	    <%= f.submit "Create Team", :class => "btn  btn-block custom-btn" %>   
+    <% end %>
+
+    	</div>
+  	</div>
+</div>
