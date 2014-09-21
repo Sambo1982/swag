@@ -5,9 +5,11 @@ class StaticPagesController < ApplicationController
 
     def dashboard
     	@user = current_user
-    	if @user.teams.count <= 0
-    		redirect_to new_team_path
-    	else
+    	@team = current_user.teams.new
+    	respond_to do |format|
+    		format.html
+    		format.json
+    		format.js
     	end
     end
     

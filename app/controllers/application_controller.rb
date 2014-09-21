@@ -5,5 +5,5 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include AlertHelper
 
-
+  
 end

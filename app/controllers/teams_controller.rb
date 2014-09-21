@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 	before_action :set_user, only: [:index, :new, :create]
-	before_action :signed_in_user,
-                only: [:index, :new, :create]
+	before_action :signed_in_user, only: [:index, :new, :create]
+    respond_to :html, :js, only: [:new, :create]
 
     def index
     	@teams = @user.teams.all  
@@ -13,12 +13,15 @@ class TeamsController < ApplicationController
 
 	def create
 		@team = @user.teams.create(team_params)
-		if @team.save
-      		redirect_to dashboard_path
-      		flash[:success] = "Congrats! You have just created a new team"
-    	else
-      		render :new
-    	end
+		respond_to do |format|
+	    if @team.save
+	      format.html 
+	      format.js 
+	    else 
+	      format.html
+	      format.js
+	    end
+	  end
 	end
 
 	private
