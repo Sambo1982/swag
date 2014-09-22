@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @team.errors.any? %>
+  <% @team.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#team-modal").modal("hide");
+  $("body").html("<%= raw escape_javascript(render(:partial => 'shared/nav_bar')) %>")
+<% end %>

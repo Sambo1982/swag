@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :teams
+  resources :team_associations
 
 
   root  'passthrough#index'

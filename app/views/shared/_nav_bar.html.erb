@@ -1,36 +1,13 @@
-<script type="text/javascript">
- $(function() {
-    $("#menu").mmenu({
 
-    });
- });
-</script>
-
-<script type="text/javascript">
-   $(document).ready(function() {
-      $("#menu")
-         .mmenu()
-         .on( "opened.mm", function() {
-            $("#nav-toggle").addClass("active");
-         })
-         .on( "closed.mm", function() {
-            $("#nav-toggle").removeClass("active");
-         })
-
-   });
-</script>
 <% if signed_in? %>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  	<div id="nav-toggle-group">
-  		<a id="nav-toggle" class="" href="#menu"><span></span></a>
-  	</div>
-  </nav>
-
-  <nav id="menu">
-  	 <ul>
-  			<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+  <nav id="menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+     <%if current_user.teams.count > 0 %>
+     	<%= link_to current_user.teams.first.name, dashboard_path, class: "navbar-brand" %>
+     <%end%>
+     <ul class="nav navbar-nav">
+        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
         <li><%= link_to "Edit profile", edit_user_path(current_user) %></li>
-  	 </ul>
+     </ul>
   </nav>
 <% end %>
 

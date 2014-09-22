@@ -1,2 +1,23 @@
 <% provide(:title, "My Dashboard") %>
 <h1>My Dashboard</h1>
+
+<% if current_user.teams.count == 0  %>
+	<script>
+	 $( document ).ready(function() {
+		$('#team-modal').modal('show')
+		$("#inner-team-modal").html("<%= escape_javascript(render 'teams/new') %>")
+	});
+	</script>
+<%end%>
+
+<div class="well">
+    <%= link_to "New Team", new_team_path, remote: true, class: "btn btn-primary" %>
+ </div>
+  <div class="new-team"></div>
+
+
+<div id="team-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div id="inner-team-modal" class="modal-content"></div>
+	</div>
+</div>
