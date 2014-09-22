@@ -5,4 +5,5 @@ $("ul.errors").html("")
   <% end %>
 <% else %>
   $("#team-modal").modal("hide");
+  $("body").html("<%= raw escape_javascript(render(:partial => 'shared/nav_bar')) %>")
 <% end %>

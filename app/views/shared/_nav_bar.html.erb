@@ -1,7 +1,7 @@
 
 <% if signed_in? %>
   <nav id="menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-     <%if current_user.teams.present? %>
+     <%if current_user.teams.count > 0 %>
      	<%= link_to current_user.teams.first.name, dashboard_path, class: "navbar-brand" %>
      <%end%>
      <ul class="nav navbar-nav">
