@@ -8,11 +8,11 @@ class TeamsController < ApplicationController
     end
               
 	def new
-		@team = @user.teams.new
+		@team = current_user.teams.new
 	end
 
 	def create
-		@team = @user.teams.create(team_params)
+		@team = current_user.teams.create(team_params)
 		respond_to do |format|
 	    if @team.save
 	      format.html 
