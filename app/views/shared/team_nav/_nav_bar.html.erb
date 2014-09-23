@@ -1,0 +1,10 @@
+
+<% if signed_in? %>
+  <nav id="menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+     <div class="container">
+       <%= render partial: "shared/team_nav/team_links" %> 
+       <%= render partial: "shared/team_nav/user_links" %> 
+	</div>
+  </nav>
+<% end %>
+

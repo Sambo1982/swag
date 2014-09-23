@@ -9,3 +9,7 @@ end
 Then(/^I should see a link for "(.*?)"$/) do |link|
   page.should have_selector(:link_or_button, "#{link}")
 end
+
+Given(/^I create a team with name "(.*?)" and description "(.*?)"$/) do |name, description|
+  User.last.teams.create(:name => name, :description => description)
+end
