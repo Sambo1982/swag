@@ -18,15 +18,11 @@ class TeamsController < ApplicationController
 
 	def create
 		@team = current_user.teams.create(team_params)
-		respond_to do |format|
 		    if @team.save
-		      format.html 
-		      format.js
-		    else 
-		      format.html
-		      format.js
+		      redirect_to new_team_path
+      		else 
+        		render "new"
 		    end
-	  	end
 	end
 
 	def edit

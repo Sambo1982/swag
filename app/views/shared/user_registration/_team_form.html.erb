@@ -1,0 +1,14 @@
+<div id="registration-div">
+	<%= form_for @team,  :html => {:class => "form", :role => "form"} do |f| %>
+	    <ul class="errors"></ul>
+
+	  <label class="form-icon-label">
+	      <span><i class="fa fa-users fa-2x"></i></span>
+	       <%= f.text_field :name, :placeholder => "Team Name", :class => "registration-input"  %>
+	  </label>
+
+	   <%= f.submit "Create team", :class => "btn  btn-block custom-btn" %>      
+
+
+	<% end %>
+</div>

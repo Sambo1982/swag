@@ -1,0 +1,32 @@
+<div id="registration-div">
+  <ul class="errors"></ul>
+ 
+  <%= form_for @user,  :html => {:class => "form", :role => "form"} do |f| %>
+    
+    <label class="form-icon-label">
+        <span><i class="fa fa-user fa-2x"></i></span>
+         <%= f.text_field :name, :placeholder => "Name", :class => "registration-input"  %>
+    </label>
+    
+    <label class="form-icon-label">
+      <span><i class="fa fa-envelope fa-2x"></i></span>
+      <%= f.text_field :email, :placeholder => "Email", :class => "registration-input"   %>
+    </label>
+
+    <label class="form-icon-label">
+      <span><i class="fa fa-lock fa-2x"></i></span>
+      <%= f.password_field :password, :placeholder => "Password", :class => "registration-input"  %>
+    </label>
+
+    <label class="form-icon-label">
+      <span><i class="fa fa-refresh fa-2x"></i></span>
+      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => "registration-input"   %>
+    </label>
+
+    <%= f.submit "Join", :class => "btn  btn-block custom-btn" %>   
+
+  <% end %>
+
+</div>
+
+ 

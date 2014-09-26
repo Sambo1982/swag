@@ -12,13 +12,15 @@ legend.centered{
   z-index: 10;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  
   h1{
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-    font-size: 50px;
+    font-size: 45px;
     color: #000;
     font-weight: 100;
   }
+
   p.lead{
   color: #737980;
   font-size: 18px;
@@ -28,6 +30,7 @@ legend.centered{
   -webkit-margin-end: 0px;
   }
 }
+
 .custom-btn {
   font-family: "Open Sans", sans-serif;
   background-color: $charcoal;

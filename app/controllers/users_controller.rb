@@ -6,18 +6,20 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+    if signed_in?
+      @team = current_user.teams.new
+    end
 	end
 
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			sign_in @user
-      		redirect_to dashboard_path
-      		flash[:success] = "Congrats! You have just created your account."
-    	else
-      		render :new
-    	end
-	end
+      sign_in @user
+      redirect_to new_team_path
+      else 
+        render "new"
+    end
+  end
 
 	def edit
 	end
