@@ -1,15 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'compass';
 @import "font-awesome";
 @import "base/colors";
 @import "base/typography";
 @import "base/forms";
 @import "base/user_registration";
+@import "app-styles/main";
 
 
-body{
-	background-color: $steady_grey;
-}
-
-#body-content{
-	margin-top: 50px;
-
-}

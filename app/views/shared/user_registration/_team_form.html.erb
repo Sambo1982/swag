@@ -1,14 +1,24 @@
-<div id="registration-div">
-	<%= form_for @team,  :html => {:class => "form", :role => "form"} do |f| %>
-	    <ul class="errors"></ul>
+<div class="form-container">
+    <section>
+         <%= form_for @team,  :html => {:class => "form", :role => "form-horizontal"} do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <span class="fa fa-users"></span>
+                    </span>
+                    <%= f.text_field :name, :placeholder => "Team Name", :class => "form-control"  %>
+                </div>
+            </div>
 
-	  <label class="form-icon-label">
-	      <span><i class="fa fa-users fa-2x"></i></span>
-	       <%= f.text_field :name, :placeholder => "Team Name", :class => "registration-input"  %>
-	  </label>
+            <div class="form-group">
+              <%= f.submit "Create team", :class => "btn btn-primary btn-block btn-lg" %>  
+            </div>
 
-	   <%= f.submit "Create team", :class => "btn  btn-block custom-btn" %>      
-
-
-	<% end %>
+        <%end%>
+    </section>
+     <section>
+        <p class="text-center text-muted">Don't overthink it. You can always edit it later.</p>
+    </section>
 </div>
+

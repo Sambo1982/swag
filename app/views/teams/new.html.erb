@@ -1,6 +1,17 @@
-<legend class="centered">
-  <h1>Almost done</h1>
-  <p class="lead">Create your first product team</p>
-</legend>
+<% provide(:title, "Create a Team") %>
+<% provide(:header, "Almost done") %>
+<% provide(:lead, "Give your product team a name") %>
 
-<%= render "shared/user_registration/team_form" %>
+  
+<div class="page-signup">
+
+	<div class="container">
+        <%= render partial: 'shared/user_registration/header' %>
+    </div>
+
+    <div class="main-body">
+        <div class="container">
+        	<%= render "shared/user_registration/team_form" %>
+        </div>
+    </div>
+</div>

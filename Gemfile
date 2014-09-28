@@ -3,12 +3,13 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 gem "font-awesome-rails"
 gem 'sqlite3'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -17,6 +18,7 @@ gem 'haml'
 gem 'factory_girl'
 gem 'pivotal-tracker'
 gem 'paranoia', '~> 2.0.2'
+gem 'compass-rails'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

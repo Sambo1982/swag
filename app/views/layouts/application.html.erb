@@ -6,10 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<div class="container" id="body-content">
+<body id="app" class="">
   		<%= render partial: "shared/flash_messages", flash: flash %> 
   		<%= yield %>
-	</div>
 </body>
 </html>

@@ -1,10 +1,24 @@
 
 <% if signed_in? %>
-  <nav id="menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-     <div class="container">
-       <%= render partial: "shared/team_nav/team_links" %> 
-       <%= render partial: "shared/team_nav/user_links" %> 
-	</div>
-  </nav>
+<section id="header" class="top-header">
+	<header class="clearfix ng-scope">
+
+    <!-- Team Logo -->
+    <%= render partial: 'shared/team_nav/team_logo'%>
+     
+    <!-- Side Menu Trigger Bars-->
+    <%= render partial: 'shared/team_nav/menu_button'%>
+ 
+ 	<!-- Current User Dropdown Links -->
+    <%= render partial: 'shared/team_nav/user_links'%>
+
+	</header>
+</section>
+
+<!-- Current User Dropdown Links -->
+<%= render partial: 'shared/team_nav/side_menu'%>
+
+
+  
 <% end %>
 

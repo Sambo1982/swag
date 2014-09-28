@@ -1,6 +1,14 @@
 <% provide(:title, "My Dashboard") %>
 <h1>My Dashboard</h1>
 
+<li class="btn">
+	<%= link_to signout_path,  method: "delete" do %>
+        <i class="fa fa-sign-out"></i>
+        <span>Log Out</span>
+    <% end %>
+</li>
+
+
 <% @teams.each do |t| %>
 	<div class="well">
     	<h1><%= t.name %></h1>

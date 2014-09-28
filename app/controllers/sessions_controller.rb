@@ -25,8 +25,9 @@ class SessionsController < ApplicationController
         	redirect_to restore_path
         else
         	sign_in user
-        	redirect_to root_path
+        	check_for_team(user)
         end
   	end
+
 
 end
