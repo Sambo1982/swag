@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
     end
               
 	def new
-		@team = current_user.teams.new
+		@team = @current_user.teams.new
 	end
 
 	def create

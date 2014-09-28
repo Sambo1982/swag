@@ -11,5 +11,12 @@ Then(/^I should see a link for "(.*?)"$/) do |link|
 end
 
 Given(/^I create a team with name "(.*?)" and description "(.*?)"$/) do |name, description|
-  User.last.teams.create(:name => name, :description => description)
+   visit new_team_path(User.last)
+   fill_in "Team Name", with: "#{name}"
+   click_button "Create team"
+end
+
+Given(/^I vistit my team page$/) do
+	user = User.last
+  	visit team_path(user.teams.last)
 end

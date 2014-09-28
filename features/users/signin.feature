@@ -2,12 +2,13 @@ Feature: User signin
 
 Background: Create Account
 Given Signup Success
+And I create a team with name "Team A" and description "Team A Rocks!" 
 And I log out
 
 Scenario: Sucessful Signin
 Given I visit the "signin" page 
 When I login with email "samcarlsruh@gmail.com" and password "foobar"
-Then I should be on page with title "My Dashboard" 
+Then I should be on page with title "Team A" 
 
 Scenario: UnSucessful Signin (bad email)
 Given I visit the "signin" page 

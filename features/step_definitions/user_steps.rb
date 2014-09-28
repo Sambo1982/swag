@@ -7,7 +7,7 @@ When(/^I enter valid user data$/) do
   fill_in "Email", with: "samcarlsruh@gmail.com"
   fill_in "Password", with: "foobar"
   fill_in "Confirm Password", with: "foobar"
-  click_button "Join"
+  click_button "Sign up"
 end
 
 Given(/^Signup Success$/) do
@@ -16,7 +16,7 @@ Given(/^Signup Success$/) do
   fill_in "Email", with: "samcarlsruh@gmail.com"
   fill_in "Password", with: "foobar"
   fill_in "Confirm Password", with: "foobar"
-  click_button "Join"
+  click_button "Sign up"
 end
 
 Given(/^I successful signin$/) do
@@ -32,7 +32,8 @@ Given(/^I cancel my account$/) do
 end
 
 Given(/^I log out$/) do
-  click_link "Sign out"
+  visit dashboard_path
+  click_link "Log Out"
 end
 
 When(/^I login with email "(.*?)" and password "(.*?)"$/) do |username, password|
@@ -64,7 +65,7 @@ When(/^I do add a valid email, password, confirm password$/) do
 end
 
 When(/^I do submit the form$/) do
-  click_button "Join"
+  click_button "Sign up"
 end
 
 Then(/^I should be on the new user page$/) do
