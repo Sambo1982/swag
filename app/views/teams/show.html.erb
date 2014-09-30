@@ -1,3 +1,6 @@
 <% provide(:title, @team.name) %>
-<%= render partial: "shared/team_nav/nav_bar"%>  
+<% content_for :nav do %>
+	<%= render partial: "shared/team_nav/nav_bar"  %>
+<% end %>
+
 

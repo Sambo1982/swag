@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="app" class="">
-  		<%= render partial: "shared/flash_messages", flash: flash %> 
-  		<%= yield %>
+
+<%= yield :nav %>
+
+
+	<div class="view-container">
+        <section data-ng-view="" id="content" class="animate-fade-up">
+        	<%= render partial: "shared/flash_messages", flash: flash %> 
+  			<%= yield %>
+        </section>
+            
+    </div>
+  		
 </body>
 </html>

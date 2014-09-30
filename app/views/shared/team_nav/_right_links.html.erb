@@ -1,0 +1,15 @@
+<ul class="nav-right pull-right list-unstyled">
+    <li class="dropdown">
+        <a href="" class="dropdown-toggle bg-orange" data-toggle="dropdown">
+            <i class="fa fa-gear"></i>
+        </a>
+        <ul class="dropdown-menu pull-right dropdown-light with-arrow">
+            <li>
+                <%= link_to edit_team_path(@team) do %>
+                    <i class="fa fa-pencil"></i>
+                    <span>Team settings</span>
+                <% end %>
+            </li>
+        </ul>
+    </li>
+</ul>

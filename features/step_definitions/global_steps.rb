@@ -11,6 +11,11 @@ Then(/^I should see a link to "(.*?)"$/) do |link|
   page.should have_selector(:link_or_button, "#{link}")
 end
 
+Then(/^I should see a "(.*?)" with the content "(.*?)"$/) do |element, content|
+  page.should have_css("#{element}")
+  page.should have_content("#{content}")
+end
+
 Then(/^I should not see the "(.*?)" element$/) do |element|
   page.should have_no_css("#{element}")
 end

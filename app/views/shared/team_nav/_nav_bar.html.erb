@@ -1,16 +1,20 @@
 
-<% if signed_in? %>
 <section id="header" class="top-header">
 	<header class="clearfix ng-scope">
 
     <!-- Team Logo -->
     <%= render partial: 'shared/team_nav/team_logo'%>
-     
-    <!-- Side Menu Trigger Bars-->
-    <%= render partial: 'shared/team_nav/menu_button'%>
- 
- 	<!-- Current User Dropdown Links -->
-    <%= render partial: 'shared/team_nav/user_links'%>
+  	
+  	<div class="top-nav">
+	    <!-- Side Menu Trigger Bars-->
+	    <%= render partial: 'shared/team_nav/menu_button'%>
+	 
+	 	<!-- Current User Dropdown Links -->
+	    <%= render partial: 'shared/team_nav/user_links'%>
+
+	    <!-- Float Right Links -->
+	    <%= render partial: 'shared/team_nav/right_links'%>
+	</div>
 
 	</header>
 </section>
@@ -19,6 +23,5 @@
 <%= render partial: 'shared/team_nav/side_menu'%>
 
 
-  
-<% end %>
+
 
