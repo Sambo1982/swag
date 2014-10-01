@@ -1,4 +1,7 @@
 <% provide(:title, "My Dashboard") %>
+<% content_for :nav do %>
+	<%= render partial: "shared/team_nav/nav_bar"  %>
+<% end %>
 <h1>My Dashboard</h1>
 
 <li class="btn">

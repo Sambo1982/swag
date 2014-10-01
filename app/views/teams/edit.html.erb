@@ -3,7 +3,7 @@
     <%= render partial: "shared/team_nav/nav_bar"  %>
 <% end %>
  
-
+<h1><%= @active_team %></h1>
  
 <div class="page page-profile">
 
@@ -66,6 +66,7 @@
                     <div class="media">
                         <div class="media-body">
                             <%= link_to "Add integration", new_integration_path, :class => "btn", :remote => true  %>
+                        <div class="add_integration"></div>
                         </div>
                     </div>
                 </div>

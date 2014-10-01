@@ -1,13 +1,11 @@
 class StaticPagesController < ApplicationController 
     
     def home
-        @disable_nav = true
     end
 
     def dashboard
-        @disable_nav = true
     	@user = current_user
-    	@team = current_user.teams.new
+        @team = @active_team
         @teams = current_user.teams.all
     	respond_to do |format|
     		format.html

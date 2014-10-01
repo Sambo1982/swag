@@ -19,7 +19,7 @@ class TeamsController < ApplicationController
 	def create
 		@team = current_user.teams.create(team_params)
 		    if @team.save
-		      redirect_to team_path(@team)
+		      check_for_team(@user)
       		else 
         		render "new"
 		    end
