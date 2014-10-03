@@ -1,0 +1,42 @@
+<div id="teams-container">
+	<div id="top-user-bar" class="row">
+
+	<div class="col-md-12 pull-right welcome-user">
+		<p>Welcome <%= @user.name %></p>
+		<%= link_to "logout", signout_path,  method: "delete" %>
+	</div>
+
+	</div>
+
+	<div class="row teams-row">
+		
+		<div class="row">
+			<div class="teams-title col-md-12">
+				<h1>Teams</h1>
+			</div>
+		</div>
+
+		<div id="team-list-box" class="col-md-8">
+			<ul id="team-list">
+				<% @teams.each do |t| %>
+					<li>
+					<%= link_to team_path(t) do %>
+						<h2 class="team-name"><%= t.name %></h2>
+						<p><%= t.description %></p>
+					<%end%>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="col-md-4">
+			<div class="teams-box">
+				<div class="new-team-button">
+					<%= link_to "Create Team", new_team_path, :remote => true, :class => "btn btn-primary btn-block" %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div id="new-team"></div>

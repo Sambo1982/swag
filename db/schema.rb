@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930132716) do
+ActiveRecord::Schema.define(version: 20141001110610) do
 
   create_table "integrations", force: true do |t|
     t.string   "api_key"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140930132716) do
     t.datetime "updated_at"
     t.string   "status",          default: "active"
     t.datetime "deleted_at"
+    t.string   "default_team"
   end
 
   add_index "users", ["deleted_at"], name: "index_users_on_deleted_at"

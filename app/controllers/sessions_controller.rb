@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
         	redirect_to restore_path
         else
         	sign_in user
-        	check_for_team(user)
+        	redirect_to teams_path
         end
   	end
 

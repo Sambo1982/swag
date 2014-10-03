@@ -1,13 +1,11 @@
 class PassthroughController < ApplicationController
   
   def index
-    path = case 
-    when signed_in?
-      dashboard_path
+    if signed_in?
+      redirect_to teams_path
     else
-      home_path
+      redirect_to home_path
     end 
-    redirect_to path
   end
 
 end

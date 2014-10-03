@@ -9,6 +9,7 @@ class TeamsController < ApplicationController
     end
 
     def show
+    	set_active_team(@team)
     	@other_teams = @user.teams.where.not(id: @team.id)
     end
               
@@ -19,13 +20,14 @@ class TeamsController < ApplicationController
 	def create
 		@team = current_user.teams.create(team_params)
 		    if @team.save
-		      check_for_team(@user)
+		      redirect_to team_path(@team)
       		else 
         		render "new"
 		    end
 	end
 
 	def edit
+		@integrations = @team.integrations.all
 	end
 
 	def update

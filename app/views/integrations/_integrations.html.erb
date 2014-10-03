@@ -1,0 +1,21 @@
+<div class="panel-group" id="accordion">
+	<% @integrations.each do |i| %>
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= i.id %>">
+	          <%= i.provider %>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapse_<%= i.id %>" class="panel-collapse collapse">
+	      <div class="panel-body">
+	        API Key: <%= i.api_key %><br>
+	        <%= button_to test_integration_path(i), :class => "btn btn-primary" do %>
+			  Test Integration</strong>
+			<% end %>
+	      </div>
+	    </div>
+    </div>
+ <%end%>
+</div>
